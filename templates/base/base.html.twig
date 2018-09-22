@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        {% block head %}
+        <meta charset="UTF-8">
+        <title>{% block title %}{% endblock %} - Spinners</title>
+        {% endblock %}
+    </head>
+
+    <body>
+        {{ include('navigation/menu.html.twig') }}
+        {% block content %}{% endblock %}
+    </body>
+</html>

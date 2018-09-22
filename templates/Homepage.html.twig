@@ -1,0 +1,19 @@
+{# templates/Homepage.html.twig #}
+{% extends "base/base.html.twig" %}
+{% block title %}Accueil{% endblock %}
+{% block content %}
+    <h1>Accueil</h1>
+
+    <h2>Liste de Hand Spinners</h2>
+    <ul>
+        {% for product in products %}
+            <li>
+                {{ loop.index }} -
+                <a href="product/{{ product.id }}">
+                    {{ product.id }} {{ product.name | upper }}
+                </a>
+
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
