@@ -28,7 +28,7 @@ class FidgetRepository
         $fidget3->setId(3);
         $fidget3->setName("dragon");
         $fidget3->setSide(3);
-        $fidget3->setColor("purple");
+        $fidget3->setColor("rainbow");
         $fidget3->setShape("wing");
 
         $fidget4 = new Fidget();

@@ -2,7 +2,13 @@
 {% extends "base/base.html.twig" %}
 {% block title %} Product {{ product_id }}{% endblock %}
 {% block content %}
-    <h1>Products {{ product_id }}</h1>
+    <h1>Product {{ product_id }}</h1>
 
-    <h2>Fidget n°{{ fidget|join(', \n') }}</h2>
+    <ul>
+        <li>Name: {{ fidget.name }}</li>
+        <li>Number of sides: {{ fidget.side }}</li>
+        <li>Color: {{ fidget.color }}</li>
+        <li>Shape: {{ fidget.shape }}</li>
+    </ul>
+
 {% endblock %}
