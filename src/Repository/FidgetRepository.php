@@ -17,6 +17,7 @@ class FidgetRepository
         $fidget1->setSide(3);
         $fidget1->setColor("red");
         $fidget1->setShape("classic");
+        $fidget1->setPic("/img/classic.jpg");
 
         $fidget2 = new Fidget();
         $fidget2->setId(2);
@@ -24,6 +25,7 @@ class FidgetRepository
         $fidget2->setSide(6);
         $fidget2->setColor("rainbow");
         $fidget2->setShape("atom");
+        $fidget2->setPic("/img/atom.jpg");
 
         $fidget3 = new Fidget();
         $fidget3->setId(3);
@@ -31,6 +33,7 @@ class FidgetRepository
         $fidget3->setSide(3);
         $fidget3->setColor("rainbow");
         $fidget3->setShape("wing");
+        $fidget3->setPic("/img/dragon.jpg");
 
         $fidget4 = new Fidget();
         $fidget4->setId(4);
@@ -38,6 +41,7 @@ class FidgetRepository
         $fidget4->setSide(3);
         $fidget4->setColor("rainbow");
         $fidget4->setShape("classic");
+        $fidget4->setPic("/img/rainbow.jpg");
         //</editor-fold>
 
         //<editor-fold desc="objects list">

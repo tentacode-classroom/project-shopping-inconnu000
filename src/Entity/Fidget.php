@@ -11,6 +11,7 @@ class Fidget
     private $side;
     private $color;
     private $shape;
+    private $pic;
 //</editor-fold>
 
 //<editor-fold desc="Setters">
@@ -38,6 +39,12 @@ class Fidget
     {
         $this->shape = $shape;
     }
+
+    public function setPic(string $pic)
+    {
+        $this->pic = $pic;
+    }
+
 //</editor-fold>
 
 //<editor-fold desc="Getters">
@@ -65,5 +72,10 @@ class Fidget
     {
         return $this->shape;
     }
+
+    public function getPic()
+{
+    return $this->pic;
+}
 //</editor-fold>
 }
