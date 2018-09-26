@@ -5,86 +5,65 @@ namespace App\Entity;
 
 class User
 {
+    //<editor-fold desc="Variables">
     private $id;
     private $email;
     private $password;
     private $firstname;
     private $lastname;
+    //</editor-fold>
 
-    /**
-     * @param int $id
-     */
+    //<editor-fold desc="Setter">
     public function setId(int $id)
     {
         $this->id = $id;
     }
-    /**
-     * @return int
-     */
+
+    public function setEmail(string $email)
+    {
+        $this->email = $email;
+    }
+
+    public function setPassword(string $password)
+    {
+        $this->password = $password;
+    }
+
+    public function setFirstname(string $firstname)
+    {
+        $this->firstname = $firstname;
+    }
+
+    public function setLastname(string $lastname)
+    {
+        $this->lastname = $lastname;
+    }
+    //</editor-fold>
+
+    //<editor-fold desc="Getter">
     public function getId()
     {
         return $this->id;
     }
 
-    /**
-     * @param string $email
-     */
-    public function setEmail(string $email)
-    {
-        $this->email = $email;
-    }
-    /**
-     * @return string
-     */
     public function getEmail()
     {
         return $this->email;
     }
 
-    /**
-     * @param string $password
-     */
-    public function setPassword(string $password)
-    {
-        $this->password = $password;
-    }
-    /**
-     * @return string
-     */
     public function getPassword()
     {
         return $this->password;
     }
 
-    /**
-     * @param string $firstname
-     */
-    public function setFirstname(string $firstname)
-    {
-        $this->firstname = $firstname;
-    }
-    /**
-     * @return string
-     */
     public function getFirstname()
     {
         return $this->firstname;
     }
 
-    /**
-     * @param string $lastname
-     */
-    public function setLastname(string $lastname)
-    {
-        $this->lastname = $lastname;
-    }
-    /**
-     * @return string
-     */
     public function getLastname()
     {
         return $this->lastname;
     }
-
-
+    //</editor-fold>
 }

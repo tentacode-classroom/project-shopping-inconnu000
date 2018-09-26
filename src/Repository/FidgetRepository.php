@@ -10,6 +10,7 @@ class FidgetRepository
 
     public function __construct()
     {
+        //<editor-fold desc="new objects">
         $fidget1 = new Fidget();
         $fidget1->setId(1);
         $fidget1->setName("classic");
@@ -37,13 +38,16 @@ class FidgetRepository
         $fidget4->setSide(3);
         $fidget4->setColor("rainbow");
         $fidget4->setShape("classic");
+        //</editor-fold>
 
+        //<editor-fold desc="objects list">
         $this->fidgets = [
             $fidget1,
             $fidget2,
             $fidget3,
             $fidget4,
         ];
+        //</editor-fold>
     }
 
     public function findAll(): array

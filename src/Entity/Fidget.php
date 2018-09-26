@@ -5,92 +5,65 @@ namespace App\Entity;
 
 class Fidget
 {
+//<editor-fold desc="Variables">
     private $id;
     private $name;
     private $side;
     private $color;
     private $shape;
+//</editor-fold>
 
-    /**
-     * @param int $id
-     */
+//<editor-fold desc="Setters">
     public function setId(int $id): void
     {
         $this->id = $id;
     }
-    /**
-     * @return int
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
 
-    /**
-     * @param string $name
-     */
     public function setName(string $name)
     {
         $this->name = $name;
     }
 
-    /**
-     * @return string
-     */
-    public function getName()
-    {
-        return $this->name;
-    }
-
-    /**
-     * @param int $side
-     */
     public function setSide(int $side)
     {
         $this->side = $side;
     }
 
-    /**
-     * @return int
-     */
-    public function getSide()
-    {
-        return $this->side;
-    }
-
-    /**
-     * @param string $color
-     */
     public function setColor(string $color)
     {
         $this->color = $color;
     }
 
-    /**
-     * @return string
-     */
+    public function setShape(string $shape)
+    {
+        $this->shape = $shape;
+    }
+//</editor-fold>
+
+//<editor-fold desc="Getters">
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    public function getSide()
+    {
+        return $this->side;
+    }
+
     public function getColor()
     {
         return $this->color;
     }
 
-    /**
-     * @param string $shape
-     */
-    public function setShape(string $shape)
-    {
-        $this->shape = $shape;
-    }
-
-    /**
-     * @return string
-     */
     public function getShape()
     {
         return $this->shape;
     }
-
-
-
-
+//</editor-fold>
 }
