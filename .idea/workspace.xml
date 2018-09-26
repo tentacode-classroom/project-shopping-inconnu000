@@ -260,7 +260,7 @@
       <path value="$PROJECT_DIR$/vendor/sensio/framework-extra-bundle" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="1">
     <option name="x" value="953" />
     <option name="width" value="974" />
     <option name="height" value="1047" />
@@ -385,15 +385,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1537522442119</updated>
-      <workItem from="1537522443257" duration="22268000" />
+      <workItem from="1537522443257" duration="22313000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22268000" />
+    <option name="totallyTimeSpent" value="22313000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="953" y="0" width="974" height="1047" extended-state="0" />
+    <frame x="953" y="0" width="974" height="1047" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24947807" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
