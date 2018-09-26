@@ -4,31 +4,21 @@ namespace App\Controller;
 
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use App\Repository\FidgetRepository;
 
 class HomepageController extends AbstractController
 {
     /**
      * @Route("/", name = "homepage")
      */
-    public function affichage()
+    public function view()
     {
-        $products=  [
-            [
-                'id' => 1,
-                'name' => 'Hand Spinner 1'
-            ],
-            [
-                'id' => 2,
-                'name' => 'Hand Spinner 2'
-            ],
-            [
-                'id' => 3,
-                'name' => 'Hand Spinner 3'
-            ]
+        $fidgetRepository = new FidgetRepository();
+        $fidgets = $fidgetRepository->findAll();
 
-        ];
+
         return $this->render('Homepage.html.twig',
-            ['products' => $products]
+            ['products' => $fidgets]
             );
     }
 }

@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Repository\FidgetRepository;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
@@ -10,32 +11,17 @@ class ProductController extends AbstractController
     /**
      * @Route("/product/{productId}", name="Product")
      */
-    public function affichage($productId = 0)
+    public function view($productId = 0)
     {
-        $product = new Product();
-        $product->id = $productId;
-        $product->name = 'Toto';
-        $fruits = [
-            'banane',
-            'pomme',
-            'fraise',
-        ];
+
+        $fidgetRepository = new FidgetRepository();
+        $fidget = $fidgetRepository->findOneById($productId);
+
 
         return $this->render('Product.html.twig', [
             'product_id' => $productId,
-            'fruits' => $fruits
+            'fidget' => $fidget,
         ]);
 
-        return $response;
     }
-}
-    class Product
-    {
-        public $id;
-        public $name;
-        public function upperName()
-        {
-            return strtoupper($this->name);
-        }
-
 }

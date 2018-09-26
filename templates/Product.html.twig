@@ -1,20 +1,8 @@
 {# templates/Product.html.twig #}
 {% extends "base/base.html.twig" %}
-{% block title %} Produit {{ product_id }}{% endblock %}
+{% block title %} Product {{ product_id }}{% endblock %}
 {% block content %}
-    <h1>Produit {{ product_id }}</h1>
+    <h1>Products {{ product_id }}</h1>
 
-    <h2>Liste des fruits {{ fruits|join(', ') }}</h2>
-    <ul>
-        {% for fruit in fruits %}
-            <li>
-                {% if loop.first %}
-                    [Premier]
-                {% endif %}
-                {% if loop.last %}
-                    [Dernier]
-                {% endif %}
-                {{ loop.index ~ fruit|reverse|upper }}</li>
-        {% endfor %}
-    </ul>
+    <h2>Fidget n°{{ fidget|join(', \n') }}</h2>
 {% endblock %}

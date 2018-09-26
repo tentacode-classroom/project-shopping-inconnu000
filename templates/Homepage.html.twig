@@ -1,16 +1,16 @@
 {# templates/Homepage.html.twig #}
 {% extends "base/base.html.twig" %}
-{% block title %}Accueil{% endblock %}
+{% block title %}Homepage{% endblock %}
 {% block content %}
-    <h1>Accueil</h1>
+    <h1>Homepage</h1>
 
-    <h2>Liste de Hand Spinners</h2>
+    <h2>Fidget Spinner's list</h2>
     <ul>
         {% for product in products %}
             <li>
                 {{ loop.index }} -
                 <a href="product/{{ product.id }}">
-                    {{ product.id }} {{ product.name | upper }}
+                    {{ product.name | upper }}
                 </a>
 
             </li>
