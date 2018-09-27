@@ -4,7 +4,7 @@ namespace App\Controller;
 
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use App\Repository\FidgetRepository;
+use App\Repository\old;
 
 class HomepageController extends AbstractController
 {
@@ -13,7 +13,7 @@ class HomepageController extends AbstractController
      */
     public function view()
     {
-        $fidgetRepository = new FidgetRepository();
+        $fidgetRepository = new old();
         $fidgets = $fidgetRepository->findAll();
 
 

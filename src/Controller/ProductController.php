@@ -2,7 +2,7 @@
 
 namespace App\Controller;
 
-use App\Repository\FidgetRepository;
+use App\Repository\old;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
@@ -14,7 +14,7 @@ class ProductController extends AbstractController
     public function view($productId = 0)
     {
 
-        $fidgetRepository = new FidgetRepository();
+        $fidgetRepository = new old();
         $fidget = $fidgetRepository->findOneById($productId);
 
 

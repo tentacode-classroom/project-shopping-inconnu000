@@ -3,6 +3,7 @@
 {% extends "base/base.html.twig" %} {# cette page hérite de la page parent base.html.twig #}
 {% block title %}Homepage{% endblock %} {# surcharge le bloc title avec "Homepage" #}
 {% block content %} {#  surcharge le block content avec le code spécifique à la Homepage du site #}
+    <br/>
     <h1>Homepage</h1>
 
     <h2>Fidget Spinner's list</h2>
@@ -11,16 +12,18 @@
     {% for product in products %} {# balaie touts les produits de l'entité fidget passé en paramètre "products" dans le HomepageController #}
 
                 <div class="col-md-4"> {# crée une colonne pour le produit actuel #}
-                    <div class="card mb-4 shadow-sm"> {# crée la case de l'objet #}
+                    <div class="card" style="width: 18rem;">
                         <a href="product/{{ product.id }}"> {# ajoute un lien dans l'image qui renvoie sur la page appropriée #}
                             <img class="card-img-top" src="{{ product.pic }}"> {# ajoute l'image du produit actuel et la place dans la case #}
                         </a>
 
                         <div class="card-body"> {# crée le corps de la case #}
                             {{ loop.index }} - {# ajoute le numéro du produit dans l'index de l'entité #}
-                            <a href="product/{{ product.id }}"> {# crée un lien vers la page produit appropriée #}
+                            <a class="card-title" href="product/{{ product.id }}"> {# crée un lien vers la page produit appropriée #}
                                 {{ product.name | capitalize }} {# met la première lettre du produit en majuscule #}
                             </a>
+                            <p class="card-text">{{ product.desc }}</p>
+                            <a href="product/{{ product.id }}" class="btn btn-primary">Go to product</a>
                         </div>
                     </div>
                 </div>

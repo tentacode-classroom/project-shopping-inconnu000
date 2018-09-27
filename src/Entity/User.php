@@ -2,68 +2,90 @@
 
 namespace App\Entity;
 
+use Doctrine\ORM\Mapping as ORM;
 
+/**
+ * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
+ */
 class User
 {
-    //<editor-fold desc="Variables">
+    /**
+     * @ORM\Id()
+     * @ORM\GeneratedValue()
+     * @ORM\Column(type="integer")
+     */
     private $id;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
     private $email;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
     private $password;
+
+    /**
+     * @ORM\Column(type="string", length=30)
+     */
     private $firstname;
+
+    /**
+     * @ORM\Column(type="string", length=50)
+     */
     private $lastname;
-    //</editor-fold>
 
-    //<editor-fold desc="Setter">
-    public function setId(int $id)
-    {
-        $this->id = $id;
-    }
-
-    public function setEmail(string $email)
-    {
-        $this->email = $email;
-    }
-
-    public function setPassword(string $password)
-    {
-        $this->password = $password;
-    }
-
-    public function setFirstname(string $firstname)
-    {
-        $this->firstname = $firstname;
-    }
-
-    public function setLastname(string $lastname)
-    {
-        $this->lastname = $lastname;
-    }
-    //</editor-fold>
-
-    //<editor-fold desc="Getter">
-    public function getId()
+    public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getEmail()
+    public function getEmail(): ?string
     {
         return $this->email;
     }
 
-    public function getPassword()
+    public function setEmail(string $email): self
+    {
+        $this->email = $email;
+
+        return $this;
+    }
+
+    public function getPassword(): ?string
     {
         return $this->password;
     }
 
-    public function getFirstname()
+    public function setPassword(string $password): self
+    {
+        $this->password = $password;
+
+        return $this;
+    }
+
+    public function getFirstname(): ?string
     {
         return $this->firstname;
     }
 
-    public function getLastname()
+    public function setFirstname(string $firstname): self
+    {
+        $this->firstname = $firstname;
+
+        return $this;
+    }
+
+    public function getLastname(): ?string
     {
         return $this->lastname;
     }
-    //</editor-fold>
+
+    public function setLastname(string $lastname): self
+    {
+        $this->lastname = $lastname;
+
+        return $this;
+    }
 }
