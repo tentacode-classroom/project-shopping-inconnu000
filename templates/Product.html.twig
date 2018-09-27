@@ -1,15 +1,16 @@
 {# templates/Product.html.twig #}
-{% extends "base/base.html.twig" %}
-{% block title %} Product {{ product_id }}{% endblock %}
-{% block content %}
-    <h1>Product {{ product_id }}</h1>
+{% extends "base/base.html.twig" %} {# cette page hérite de la page parent base.html.twig #}
+{% block title %} Product {{ product_id }}{% endblock %} {# surcharge le bloc title avec "product" + le nunéro du produit #}
+{% block content %} {#  surcharge le block content avec le code spécifique à la page Product du site #}
 
-    <ul>
-        <li>Name: {{ fidget.name }}</li>
-        <li>Number of sides: {{ fidget.side }}</li>
-        <li>Color: {{ fidget.color }}</li>
-        <li>Shape: {{ fidget.shape }}</li>
-        <li><img src="{{ fidget.pic }}"></li>
+    <h1>Product {{ product_id }}</h1> {# affiche le numéro du produit #}
+
+    <ul> {# liste les différentes caractéristiques du produit #}
+        <li>Name: {{ fidget.name }}</li> {# le nom #}
+        <li>Number of sides: {{ fidget.side }}</li> {# le nombre de côtés #}
+        <li>Color: {{ fidget.color }}</li> {# la couleur #}
+        <li>Shape: {{ fidget.shape }}</li> {# la forme #}
+        <li><img src="{{ fidget.pic }}"></li> {# une image #}
     </ul>
 
-{% endblock %}
+{% endblock %} {# fin de la surcharge du bloc content #}

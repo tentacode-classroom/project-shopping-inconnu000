@@ -6,7 +6,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../../../favicon.ico">
 
-    <title>{% block title %}{% endblock %} - Spinners</title>
+    <title>{% block title %}{% endblock %} - Spinners</title> {# création d'un bloc title pour compléter le titre avec le nom de page actuel #}
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
@@ -20,7 +20,7 @@
 <body>
 
 <header>
-    {{ include('navigation/menu.html.twig') }}
+    {{ include('navigation/menu.html.twig') }} {# inclus la navbar dans les pages #}
 </header>
 
 <main role="main">
@@ -29,7 +29,7 @@
     <br/>
 
 
-    {% block content %}{% endblock %}
+    {% block content %}{% endblock %} {# création du bloc content qui contiendra toutes les informations uniques aux pages demandées #}
 </main>
 
 <!-- Bootstrap core JavaScript
