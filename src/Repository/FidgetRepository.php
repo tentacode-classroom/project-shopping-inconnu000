@@ -19,6 +19,8 @@ class FidgetRepository extends ServiceEntityRepository
         parent::__construct($registry, Fidget::class);
     }
 
+
+
 //    /**
 //     * @return Fidget[] Returns an array of Fidget objects
 //     */
@@ -35,6 +37,15 @@ class FidgetRepository extends ServiceEntityRepository
         ;
     }
     */
+    public function OrderByName()
+    {
+        return $this->createQueryBuilder('f')
+            ->orderBy('f.name', 'ASC')
+            ->setMaxResults(10)
+            ->getQuery()
+            ->getResult()
+            ;
+    }
 
     /*
     public function findOneBySomeField($value): ?Fidget

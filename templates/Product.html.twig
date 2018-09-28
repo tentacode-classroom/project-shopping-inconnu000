@@ -3,14 +3,14 @@
 {% block title %} Product {{ product_id }}{% endblock %} {# surcharge le bloc title avec "product" + le nunéro du produit #}
 {% block content %} {#  surcharge le block content avec le code spécifique à la page Product du site #}
 
-    <h1>Product {{ product_id }}</h1> {# affiche le numéro du produit #}
+    <h1>Product {{ product_id }} - {{ fidget.viewCounter }} vues</h1> {# affiche le numéro du produit #}
 
     <ul> {# liste les différentes caractéristiques du produit #}
         <li>Name: {{ fidget.name }}</li> {# le nom #}
         <li>Number of sides: {{ fidget.side }}</li> {# le nombre de côtés #}
         <li>Color: {{ fidget.color }}</li> {# la couleur #}
         <li>Shape: {{ fidget.shape }}</li> {# la forme #}
-        <li>Description: {{ fidget.desc }}</li> {# la desciption #}
+        <li>Description: {{ fidget.description }}</li> {# la desciption #}
         <li><img src="{{ fidget.pic }}"></li> {# une image #}
 
     </ul>

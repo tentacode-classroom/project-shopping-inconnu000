@@ -2,9 +2,9 @@
 
 namespace App\Controller;
 
+use App\Entity\Fidget;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use App\Repository\old;
 
 class HomepageController extends AbstractController
 {
@@ -13,12 +13,16 @@ class HomepageController extends AbstractController
      */
     public function view()
     {
-        $fidgetRepository = new old();
-        $fidgets = $fidgetRepository->findAll();
+
+        $doctrine = $this->getDoctrine();
+        $repository=$doctrine->getRepository(Fidget::class);
+        $productId = $repository->OrderByName();
+
+        dump($productId);
 
 
         return $this->render('Homepage.html.twig',
-            ['products' => $fidgets]
+            ['products' => $productId]
             );
     }
 }

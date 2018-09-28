@@ -51,6 +51,11 @@ class Fidget
      */
     private $pic;
 
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $viewCounter;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -138,5 +143,22 @@ class Fidget
         $this->pic = $pic;
 
         return $this;
+    }
+
+    public function getViewCounter(): ?int
+    {
+        return $this->viewCounter;
+    }
+
+    public function setViewCounter(int $viewCounter): self
+    {
+        $this->viewCounter = $viewCounter;
+
+        return $this;
+    }
+
+    public function incrementViewCounter()
+    {
+        $this->viewCounter++;
     }
 }

@@ -2,7 +2,7 @@
 
 namespace App\Controller;
 
-use App\Repository\old;
+use App\Entity\Fidget;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
@@ -14,9 +14,15 @@ class ProductController extends AbstractController
     public function view($productId = 0)
     {
 
-        $fidgetRepository = new old();
-        $fidget = $fidgetRepository->findOneById($productId);
+        $fidget = $this->getDoctrine();
+        $repository= $fidget->getRepository(Fidget::class);
+        $fidget = $repository->find($productId);
 
+        $fidget->incrementViewCounter();
+
+        $entityManager = $this->getDoctrine()->getManager();
+        $entityManager->persist($fidget);
+        $entityManager->flush();
 
         return $this->render('Product.html.twig', [
             'product_id' => $productId,
