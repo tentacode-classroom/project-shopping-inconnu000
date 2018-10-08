@@ -9,6 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Fidget
 {
+    //<editor-fold desc="Variables">
     /**
      * @ORM\Id()
      * @ORM\GeneratedValue()
@@ -32,11 +33,6 @@ class Fidget
     private $color;
 
     /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $shape;
-
-    /**
      * @ORM\Column(type="float")
      */
     private $price;
@@ -56,6 +52,16 @@ class Fidget
      */
     private $viewCounter;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Shape", inversedBy="fidgets")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $shape;
+    //</editor-fold>
+
+    //<editor-fold desc="Getters and Setters">
+
+    //<editor-fold desc="Getters">
     public function getId(): ?int
     {
         return $this->id;
@@ -66,16 +72,48 @@ class Fidget
         return $this->name;
     }
 
+    public function getSide(): ?int
+    {
+        return $this->side;
+    }
+
+    public function getColor(): ?string
+    {
+        return $this->color;
+    }
+
+    public function getShape(): ?Shape
+    {
+        return $this->shape;
+    }
+
+    public function getPrice(): ?float
+    {
+        return $this->price;
+    }
+
+    public function getDescription(): ?string
+    {
+        return $this->description;
+    }
+
+    public function getPic(): ?string
+    {
+        return $this->pic;
+    }
+
+    public function getViewCounter(): ?int
+    {
+        return $this->viewCounter;
+    }
+    //</editor-fold>
+
+    //<editor-fold desc="Setters">
     public function setName(string $name): self
     {
         $this->name = $name;
 
         return $this;
-    }
-
-    public function getSide(): ?int
-    {
-        return $this->side;
     }
 
     public function setSide(int $side): self
@@ -85,11 +123,6 @@ class Fidget
         return $this;
     }
 
-    public function getColor(): ?string
-    {
-        return $this->color;
-    }
-
     public function setColor(string $color): self
     {
         $this->color = $color;
@@ -97,21 +130,11 @@ class Fidget
         return $this;
     }
 
-    public function getShape(): ?string
-    {
-        return $this->shape;
-    }
-
-    public function setShape(string $shape): self
+    public function setShape(?Shape $shape): self
     {
         $this->shape = $shape;
 
         return $this;
-    }
-
-    public function getPrice(): ?float
-    {
-        return $this->price;
     }
 
     public function setPrice(float $price): self
@@ -121,21 +144,11 @@ class Fidget
         return $this;
     }
 
-    public function getDescription(): ?string
-    {
-        return $this->description;
-    }
-
     public function setDescription(?string $description): self
     {
         $this->description = $description;
 
         return $this;
-    }
-
-    public function getPic(): ?string
-    {
-        return $this->pic;
     }
 
     public function setPic(string $pic): self
@@ -145,17 +158,15 @@ class Fidget
         return $this;
     }
 
-    public function getViewCounter(): ?int
-    {
-        return $this->viewCounter;
-    }
-
     public function setViewCounter(int $viewCounter): self
     {
         $this->viewCounter = $viewCounter;
 
         return $this;
     }
+    //</editor-fold>
+
+    //</editor-fold>
 
     public function incrementViewCounter()
     {

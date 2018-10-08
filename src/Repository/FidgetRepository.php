@@ -40,7 +40,7 @@ class FidgetRepository extends ServiceEntityRepository
     public function OrderByName()
     {
         return $this->createQueryBuilder('f')
-            ->orderBy('f.name', 'ASC')
+            ->orderBy('f.viewCounter', 'DESC')
             ->setMaxResults(10)
             ->getQuery()
             ->getResult()

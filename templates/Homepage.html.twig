@@ -18,14 +18,15 @@
                         </a>
 
                         <div class="card-body"> {# crée le corps de la case #}
-                            {{ loop.index }} - {# ajoute le numéro du produit dans l'index de l'entité #}
+                            {{ product.id }} - {# ajoute le numéro du produit dans l'index de l'entité #}
                             <a class="card-title" href="product/{{ product.id }}"> {# crée un lien vers la page produit appropriée #}
-                                {{ product.name | capitalize }} {# met la première lettre du produit en majuscule #}
-                            </a>
+                                {{ product.name | capitalize }}  {# met la première lettre du produit en majuscule #}
+                            </a>- {{ product.viewCounter }} views
                             <p class="card-text">{{ product.description }}</p>
                             <a href="product/{{ product.id }}" class="btn btn-primary">Go to product</a>
                         </div>
                     </div>
+                    <br/>
                 </div>
 
     {% endfor %} {# balise de fin de boucle #}
