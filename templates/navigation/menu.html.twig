@@ -8,12 +8,34 @@
     <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav mr-auto"> {# création d'une liste d'objets sur la navbar #}
             <li class="nav-item active"> {# création d'un objet actif sur la navbar #}
-                <a class="nav-link" href="{{ url('homepage') }}">Homepage</a> {# lien vers la homepage #}
+                <a class="nav-link" href="{{ path('homepage') }}">Homepage</a> {# lien vers la homepage #}
             </li>
+            {% if is_granted('ROLE_ADMIN') %}
+            <li class="nav-item active"> {# création d'un objet actif sur la navbar #}
+                <a class="nav-link" href="{{ path('admin') }}">Admin</a> {# lien vers la homepage #}
+            </li>
+            {% endif %}
+            {% if is_granted('ROLE_USER') %}
+            <li class="nav-item active"> {# création d'un objet actif sur la navbar #}
+                <a class="nav-link" href="{{ path('logout') }}">Logout ({{ app.user.username }})</a> {# lien vers la homepage #}
+            </li>
+            {% endif %}
+            {% if not is_granted('ROLE_USER')%}
+                <li class="nav-item active"> {# création d'un objet actif sur la navbar #}
+                    <a class="nav-link" href="{{ path('login') }}">Login</a> {# lien vers la homepage #}
+                </li>
+            {% endif %}
+            {% if not is_granted('ROLE_USER')%}
+                <li class="nav-item active"> {# création d'un objet actif sur la navbar #}
+                    <a class="nav-link" href="{{ path('registration') }}">Registration</a> {# lien vers la homepage #}
+                </li>
+            {% endif %}
         </ul>
+
+
         <form class="form-inline mt-2 mt-md-0"> {# création de la barre de recherche et du bouton pour valider la recherche #}
-            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
         </form>
     </div>
 </nav>

@@ -1098,7 +1098,14 @@
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="266" parent="243" name="PRIMARY">
+    <column id="266" parent="243" name="roles">
+      <Position>6</Position>
+      <Comment>(DC2Type:simple_array)</Comment>
+      <DataType>longtext|0</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="267" parent="243" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
